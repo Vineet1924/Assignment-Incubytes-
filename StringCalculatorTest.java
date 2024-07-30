@@ -13,4 +13,11 @@ public class StringCalculatorTest {
         // test case for version - 3
         Assert.assertEquals(3, calculator.add("//;\n1;2"));
     }
+
+    // test case for version - 4
+    @Test(expected = IllegalArgumentException.class)
+    public void testAddWithNegativeNumbers() {
+        StringCalculator calculator = new StringCalculator();
+        calculator.add("-1,-1,3,-4,\n-5");
+    }
 }
