@@ -4,15 +4,17 @@ public class StringCalculator {
         if (numbers.isEmpty()) {
             return 0;
         }
-        // variable for matching delimiter
-        String delimiter = ",|\\n";
-        // split string seprated by the comma and store number into number array.
-        String[] number = numbers.split(delimiter);
-        // store total sum.
+        // Replace all non-digit characters with a comma (known delimiter)
+        numbers = numbers.replaceAll("[^0-9]", ",");
+        // Split the string using the comma delimiter
+        String[] numberArray = numbers.split(",");
+        // Store total sum
         int sum = 0;
-        // loop each number and convert it to the integer.
-        for (String num : number) {
-            sum += Integer.parseInt(num);
+        // Loop through each number and convert it to an integer
+        for (String num : numberArray) {
+            if (!num.isEmpty()) { // Check for empty strings
+                sum += Integer.parseInt(num);
+            }
         }
         return sum;
     }

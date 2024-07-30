@@ -10,5 +10,7 @@ public class StringCalculatorTest {
         Assert.assertEquals(6, calculator.add("1,5"));
         // test case for version - 2
         Assert.assertEquals(6, calculator.add("1\n2,3"));
+        // test case for version - 3
+        Assert.assertEquals(3, calculator.add("//;\n1;2"));
     }
 }
