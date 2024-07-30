@@ -4,8 +4,10 @@ public class StringCalculator {
         if (numbers.isEmpty()) {
             return 0;
         }
+        // variable for matching delimiter
+        String delimiter = ",|\\n";
         // split string seprated by the comma and store number into number array.
-        String[] number = numbers.split(",");
+        String[] number = numbers.split(delimiter);
         // store total sum.
         int sum = 0;
         // loop each number and convert it to the integer.
